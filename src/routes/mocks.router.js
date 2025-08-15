@@ -4,7 +4,6 @@ import { usersService, petsService } from '../services/index.js';
 
 const router = Router();
 
-// Endpoint para generar mascotas mock
 router.get('/mockingpets', async (req, res) => {
     try {
         const pets = generatePets(100);
@@ -21,7 +20,6 @@ router.get('/mockingpets', async (req, res) => {
     }
 });
 
-// Endpoint para generar usuarios mock
 router.get('/mockingusers', async (req, res) => {
     try {
         const users = await generateUsers(50); 
@@ -38,12 +36,10 @@ router.get('/mockingusers', async (req, res) => {
     }
 });
 
-// Endpoint para generar e insertar datos en la base de datos
 router.post('/generateData', async (req, res) => {
     try {
         const { users = 0, pets = 0 } = req.body;
 
-        // Validación de parámetros
         if (typeof users !== 'number' || typeof pets !== 'number' || users < 0 || pets < 0) {
             return res.status(400).json({
                 status: 'error',
@@ -56,7 +52,6 @@ router.post('/generateData', async (req, res) => {
             petsInserted: 0
         };
 
-        // Generar e insertar usuarios
         if (users > 0) {
             const mockUsers = await generateUsers(users);
             
@@ -70,7 +65,6 @@ router.post('/generateData', async (req, res) => {
             }
         }
 
-        // Generar e insertar mascotas
         if (pets > 0) {
             const mockPets = generatePets(pets);
             
