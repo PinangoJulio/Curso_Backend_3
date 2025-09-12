@@ -1,0 +1,61 @@
+components:
+  schemas:
+    User:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Id autogenerado de mongo
+        first_name:
+          type: string
+          description: Nombre del usuario
+        last_name:
+          type: string
+          description: Apellido del usuario    
+        email:
+          type: string
+          description: Correo electronico
+        password: 
+          type: string
+          description: contraseña de acceso  
+        role: 
+          type: string
+          description: rol del usuario       
+        pets: 
+          type: array
+          description: Array de IDs de mascotas adoptadas por el usuario
+          items:
+            type: object
+            properties:
+              _id:
+                type: string
+      example:
+        _id: "6893eaba2ac0b16fa177be78"
+        first_name: "Rosa"
+        last_name: "Yami Suárez"
+        email: "Rosa.YamiSuarez38@gmail.com"
+        password: "hashedpassword123"
+        role: "user"
+        pets: []
+        
+  requestBodies:
+    updateUser:
+      type: object
+      properties:
+        first_name:
+          type: string
+          description: Nombre de usuario
+        last_name:
+          type: string
+          description: Apellido
+        email:
+          type: string
+          description: Correo del usuario
+        role:
+          type: string
+          description: Rol del usuario
+      example:
+        first_name: "Rosa"
+        last_name: "Yami Suárez"
+        email: "Rosa.YamiSuarez38@gmail.com"
+        role: "admin"

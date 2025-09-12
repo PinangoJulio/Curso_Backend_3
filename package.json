@@ -1,32 +1,38 @@
 {
-  "name": "tp_coder_back_3",
+  "name": "adoptme-backend",
   "version": "1.0.0",
-  "description": "TP Backend Coderhouse - Mocks",
+  "description": "API para sistema de adopción de mascotas",
   "main": "src/app.js",
   "type": "module",
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/supertest.test.js --exit"
   },
   "keywords": [
+    "adoptme",
+    "mascotas",
     "backend",
-    "node",
-    "express",
-    "coderhouse"
+    "nodejs"
   ],
   "author": "Tu Nombre",
   "license": "ISC",
   "dependencies": {
-    "@faker-js/faker": "^8.4.1",
+    "@faker-js/faker": "^9.9.0",
     "bcrypt": "^5.1.1",
-    "bcryptjs": "^3.0.2",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.6.1",
     "express": "^4.21.2",
-    "mongoose": "^8.17.1"
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.13.8",
+    "multer": "^1.4.5-lts.1",
+    "supertest": "^6.3.3",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.1.0",
     "nodemon": "^3.1.10"
   }
 }
