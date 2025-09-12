@@ -5,7 +5,6 @@ import Pet from '../dao/models/pet.model.js';
 
 const router = Router();
 
-
 router.get('/mockingpets', async (req, res) => {
     try {
         const pets = generatePets(100);
@@ -40,10 +39,16 @@ router.get('/mockingusers', async (req, res) => {
 
 router.post('/generateData', async (req, res) => {
     try {
-        const { users = 0, pets = 0 } = req.body;
+        // Obtener parámetros desde query parameters Y desde body
+        let { user, users, pet, pets } = req.query;
+        const bodyParams = req.body;
 
-        
-        if (typeof users !== 'number' || typeof pets !== 'number' || users < 0 || pets < 0) {
+        // Permitir parámetros desde body también
+        const finalUsers = parseInt(user || users || bodyParams.users || bodyParams.user || 1);
+        const finalPets = parseInt(pet || pets || bodyParams.pets || bodyParams.pet || 1);
+
+        // Validar que sean números positivos
+        if (finalUsers < 0 || finalPets < 0) {
             return res.status(400).json({
                 status: 'error',
                 message: 'Los parámetros users y pets deben ser números positivos'
@@ -55,25 +60,28 @@ router.post('/generateData', async (req, res) => {
             petsInserted: 0
         };
 
-        if (users > 0) {
-            const mockUsers = await generateUsers(users);
+        // Generar usuarios
+        if (finalUsers > 0) {
+            const mockUsers = await generateUsers(finalUsers);
             const insertedUsers = await User.insertMany(mockUsers);
             results.usersInserted = insertedUsers.length;
         }
 
-        if (pets > 0) {
-            const mockPets = generatePets(pets);
+        // Generar mascotas
+        if (finalPets > 0) {
+            const mockPets = generatePets(finalPets);
             const insertedPets = await Pet.insertMany(mockPets);
             results.petsInserted = insertedPets.length;
         }
 
         res.status(201).json({
             status: 'success',
-            message: 'Datos generados e insertados correctamente',
+            message: 'Datos generados exitosamente',
             payload: results
         });
 
     } catch (error) {
+        console.error('Error en generateData:', error);
         res.status(500).json({
             status: 'error',
             message: 'Error generando e insertando datos',
