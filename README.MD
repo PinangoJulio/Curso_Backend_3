@@ -1,38 +1,54 @@
 🐾 Adoptme - Sistema de Adopción de Mascotas
 📝 Descripción
-API REST para sistema de adopción de mascotas desarrollada con Node.js, Express y MongoDB.
+API REST para sistema de adopción de mascotas desarrollada con Node.js, Express y MongoDB como proyecto final del curso de Backend III de Coderhouse.
 
-🎯 Objetivos del Proyecto
+🎯 Estado del Proyecto
 ✅ Implementar tests funcionales para todos los endpoints de adopciones
 ✅ Documentar API con Swagger (módulo Users)
 ✅ Dockerizar la aplicación
 ✅ Desplegar imagen en DockerHub
+
 🚀 Tecnologías Utilizadas
 Backend: Node.js, Express.js
+
 Base de Datos: MongoDB, Mongoose
+
 Testing: Mocha, Chai, Supertest
+
 Documentación: Swagger UI
+
 Containerización: Docker
+
 Autenticación: JWT, bcrypt
+
 📦 Instalación Local
 Prerrequisitos
 Node.js v20 o superior
+
 MongoDB
+
 Git
+
 Pasos de Instalación
 Clonar el repositorio
+
 bash
-git clone <URL_DEL_REPO>
-cd adoptme-backend
+git clone https://github.com/PinangoJulio/Curso_Backend_3.git
+cd Curso_Backend_3
 Instalar dependencias
+
 bash
 npm install
-Configurar variables de entorno Crear archivo .env en la raíz del proyecto:
+Configurar variables de entorno
+Crear archivo .env en la raíz del proyecto:
+
 env
 PORT=8080
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=adoptme
+JWT_SECRET=tu_clave_secreta_jwt
 Iniciar la aplicación
+
 bash
 # Desarrollo
 npm run dev
@@ -47,13 +63,17 @@ npm test
 Los tests incluyen:
 
 ✅ Tests de endpoints de mascotas (Pets)
+
 ✅ Tests de endpoints de usuarios (Users)
+
 ✅ Tests de endpoints de adopciones (Adoptions)
+
 ✅ Tests de generación de datos mock
+
 📚 Documentación API
 La documentación completa de la API está disponible en:
-
 http://localhost:8080/docs
+
 Endpoints Principales
 Método	Endpoint	Descripción
 GET	/api/users	Obtener todos los usuarios
@@ -79,13 +99,13 @@ docker run -d \
   adoptme-backend:1.0.0
 Imagen en DockerHub
 La imagen está disponible públicamente en:
+https://hub.docker.com/r/pinangojulio/adoptme-backend
 
-https://hub.docker.com/r/TU_USUARIO/adoptme-backend
 Descargar y ejecutar desde DockerHub:
 
 bash
 # Descargar imagen
-docker pull TU_USUARIO/adoptme-backend:1.0.0
+docker pull pinangojulio/adoptme-backend:1.0.0
 
 # Ejecutar contenedor
 docker run -d \
@@ -94,16 +114,18 @@ docker run -d \
   -e MONGO_URL="tu_mongo_url" \
   -e DB_NAME="adoptme" \
   --name adoptme-app \
-  TU_USUARIO/adoptme-backend:1.0.0
+  pinangojulio/adoptme-backend:1.0.0
 🔧 Variables de Entorno
 Variable	Descripción	Valor por defecto
 PORT	Puerto del servidor	8080
 MONGO_URL	URL de conexión MongoDB	mongodb://localhost:27017
 DB_NAME	Nombre de la base de datos	adoptme
+JWT_SECRET	Clave secreta para JWT	(requerida)
 📁 Estructura del Proyecto
+text
 src/
 ├── controllers/     # Controladores de rutas
-├── dao/            # Data Access Objects
+├── dao/            # Data Access Objects  
 ├── docs/           # Documentación Swagger
 ├── dto/            # Data Transfer Objects
 ├── models/         # Modelos de Mongoose
@@ -120,17 +142,3 @@ bash
 npm start          # Iniciar en producción
 npm run dev        # Iniciar en desarrollo (nodemon)
 npm test           # Ejecutar tests
-🤝 Contribución
-Fork del proyecto
-Crear rama para feature (git checkout -b feature/AmazingFeature)
-Commit de cambios (git commit -m 'Add some AmazingFeature')
-Push a la rama (git push origin feature/AmazingFeature)
-Abrir Pull Request
-📄 Licencia
-Este proyecto está bajo la Licencia ISC.
-
-👨‍💻 Autor
-Tu Nombre - Coderhouse Backend III
-
-⭐ Si este proyecto te fue útil, no olvides darle una estrella!
-
