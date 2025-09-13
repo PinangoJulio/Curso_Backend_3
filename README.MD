@@ -117,13 +117,13 @@ docker run -d \
   adoptme-backend:1.0.0
 Imagen en DockerHub
 Disponible en:
-👉 DockerHub - pinangojulio/adoptme-backend
+👉 DockerHub - [pinangojulio/adoptme-backend](https://hub.docker.com/r/juliopinango/adoptme-backend)
 
 Descargar y ejecutar:
 
 
 # Descargar imagen
-docker pull pinangojulio/adoptme-backend:1.0.0
+docker pull juliopinango/adoptme-backend:1.0.0
 
 # Ejecutar contenedor
 docker run -d \
