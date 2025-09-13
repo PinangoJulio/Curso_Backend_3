@@ -1,25 +1,45 @@
-🐾 Adoptme - Sistema de Adopción de Mascotas
-📝 Descripción
-API REST para sistema de adopción de mascotas desarrollada con Node.js, Express y MongoDB como proyecto final del curso de Backend III de Coderhouse.
+# 🐾 Adoptme - Sistema de Adopción de Mascotas
 
-🎯 Estado del Proyecto
-✅ Implementar tests funcionales para todos los endpoints de adopciones
-✅ Documentar API con Swagger (módulo Users)
-✅ Dockerizar la aplicación
-✅ Desplegar imagen en DockerHub
+![Node.js](https://img.shields.io/badge/Node.js-v20-green)
+![Express](https://img.shields.io/badge/Express.js-Framework-blue)
+![MongoDB](https://img.shields.io/badge/MongoDB-Database-brightgreen)
+![Docker](https://img.shields.io/badge/Docker-Ready-blue)
+![Tests](https://img.shields.io/badge/Tests-Mocha%2FChai%2FSupertest-yellowgreen)
 
-🚀 Tecnologías Utilizadas
-Backend: Node.js, Express.js
+---
 
-Base de Datos: MongoDB, Mongoose
+## 📝 Descripción
+API REST para sistema de adopción de mascotas desarrollada con **Node.js**, **Express** y **MongoDB** como proyecto final del curso **Backend III - Coderhouse**.
 
-Testing: Mocha, Chai, Supertest
+---
 
-Documentación: Swagger UI
+## 🎯 Estado del Proyecto
+- ✅ Implementar tests funcionales para todos los endpoints de adopciones  
+- ✅ Documentar API con Swagger (módulo Users)  
+- ✅ Dockerizar la aplicación  
+- ✅ Desplegar imagen en DockerHub  
 
-Containerización: Docker
+---
 
-Autenticación: JWT, bcrypt
+## 🚀 Tecnologías Utilizadas
+- **Backend:** Node.js, Express.js  
+- **Base de Datos:** MongoDB, Mongoose  
+- **Testing:** Mocha, Chai, Supertest  
+- **Documentación:** Swagger UI  
+- **Containerización:** Docker  
+- **Autenticación:** JWT, bcrypt  
+
+---
+
+## ⚡️ Quickstart
+Ejecutá el proyecto en 3 pasos:
+
+git clone https://github.com/PinangoJulio/Curso_Backend_3.git
+cd Curso_Backend_3
+npm install
+npm run dev
+La API estará disponible en:
+👉 http://localhost:8080
 
 📦 Instalación Local
 Prerrequisitos
@@ -29,25 +49,27 @@ MongoDB
 
 Git
 
-Pasos de Instalación
+Pasos
 Clonar el repositorio
 
+ 
 git clone https://github.com/PinangoJulio/Curso_Backend_3.git
 cd Curso_Backend_3
 Instalar dependencias
 
+ 
 npm install
-Configurar variables de entorno
-Crear archivo .env en la raíz del proyecto:
+Configurar variables de entorno creando el archivo .env en la raíz:
 
 env
+ 
 PORT=8080
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=adoptme
 JWT_SECRET=tu_clave_secreta_jwt
 Iniciar la aplicación
 
-
+ 
 # Desarrollo
 npm run dev
 
@@ -56,23 +78,23 @@ npm start
 🧪 Testing
 Ejecutar todos los tests:
 
-
+ 
 npm test
-Los tests incluyen:
+Incluye:
 
-✅ Tests de endpoints de mascotas (Pets)
+✅ Endpoints de mascotas (Pets)
 
-✅ Tests de endpoints de usuarios (Users)
+✅ Endpoints de usuarios (Users)
 
-✅ Tests de endpoints de adopciones (Adoptions)
+✅ Endpoints de adopciones (Adoptions)
 
-✅ Tests de generación de datos mock
+✅ Generación de datos mock
 
 📚 Documentación API
-La documentación completa de la API está disponible en:
-http://localhost:8080/docs
+La documentación completa está disponible en:
+👉 http://localhost:8080/docs
 
-Endpoints Principales
+Endpoints principales
 Método	Endpoint	Descripción
 GET	/api/users	Obtener todos los usuarios
 GET	/api/users/:uid	Obtener usuario por ID
@@ -83,12 +105,12 @@ POST	/api/pets	Crear nueva mascota
 GET	/api/adoptions	Obtener todas las adopciones
 GET	/api/adoptions/:aid	Obtener adopción por ID
 POST	/api/adoptions/:uid/:pid	Crear nueva adopción
+
 🐳 Docker
 Construir imagen local
-
 docker build -t adoptme-backend:1.0.0 .
 Ejecutar contenedor
-
+ 
 docker run -d \
   -p 8080:3000 \
   -e MONGO_URL="tu_mongo_url" \
@@ -96,12 +118,12 @@ docker run -d \
   --name adoptme-container \
   adoptme-backend:1.0.0
 Imagen en DockerHub
-La imagen está disponible públicamente en:
-https://hub.docker.com/r/pinangojulio/adoptme-backend
+Disponible en:
+👉 DockerHub - pinangojulio/adoptme-backend
 
-Descargar y ejecutar desde DockerHub:
+Descargar y ejecutar:
 
-
+ 
 # Descargar imagen
 docker pull pinangojulio/adoptme-backend:1.0.0
 
@@ -119,24 +141,26 @@ PORT	Puerto del servidor	8080
 MONGO_URL	URL de conexión MongoDB	mongodb://localhost:27017
 DB_NAME	Nombre de la base de datos	adoptme
 JWT_SECRET	Clave secreta para JWT	(requerida)
+
 📁 Estructura del Proyecto
 text
+ 
 src/
 ├── controllers/     # Controladores de rutas
-├── dao/            # Data Access Objects  
-├── docs/           # Documentación Swagger
-├── dto/            # Data Transfer Objects
-├── models/         # Modelos de Mongoose
-├── repository/     # Patrón Repository
-├── routes/         # Definición de rutas
-├── services/       # Servicios de negocio
-├── utils/          # Utilidades
-├── config/         # Configuración
-└── app.js          # Archivo principal
+├── dao/             # Data Access Objects  
+├── docs/            # Documentación Swagger
+├── dto/             # Data Transfer Objects
+├── models/          # Modelos de Mongoose
+├── repository/      # Patrón Repository
+├── routes/          # Definición de rutas
+├── services/        # Servicios de negocio
+├── utils/           # Utilidades
+├── config/          # Configuración
+└── app.js           # Archivo principal
 
-test/               # Tests unitarios y funcionales
+test/                # Tests unitarios y funcionales
 🧑‍💻 Scripts Disponibles
-
-npm start          # Iniciar en producción
-npm run dev        # Iniciar en desarrollo (nodemon)
-npm test           # Ejecutar tests
+ 
+npm start    # Iniciar en producción
+npm run dev  # Iniciar en desarrollo (nodemon)
+npm test     # Ejecutar tests

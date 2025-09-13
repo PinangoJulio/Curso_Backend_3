@@ -10,7 +10,7 @@ COPY package*.json ./
 # Instalar dependencias
 RUN npm ci --only=production && npm cache clean --force
 
-# Copiar código fuente
+#   fuente
 COPY ./src ./src
 
 # Crear usuario no root para seguridad
