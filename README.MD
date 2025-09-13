@@ -115,7 +115,9 @@ docker run -d \
   -e DB_NAME="adoptme" \
   --name adoptme-container \
   adoptme-backend:1.0.0
+
 Imagen en DockerHub
+
 Disponible en:
 👉 DockerHub - [pinangojulio/adoptme-backend](https://hub.docker.com/r/juliopinango/adoptme-backend)
 
