@@ -52,24 +52,22 @@ Git
 Pasos
 Clonar el repositorio
 
-Copiar código
+
 git clone https://github.com/PinangoJulio/Curso_Backend_3.git
 cd Curso_Backend_3
 Instalar dependencias
 
-Copiar código
 npm install
 Configurar variables de entorno creando el archivo .env en la raíz:
 
 env
-Copiar código
+
 PORT=8080
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=adoptme
 JWT_SECRET=tu_clave_secreta_jwt
 Iniciar la aplicación
 
-Copiar código
 # Desarrollo
 npm run dev
 
@@ -78,7 +76,7 @@ npm start
 🧪 Testing
 Ejecutar todos los tests:
 
-Copiar código
+
 npm test
 Incluye:
 
@@ -106,11 +104,11 @@ GET	/api/adoptions	Obtener todas las adopciones
 GET	/api/adoptions/:aid	Obtener adopción por ID
 POST	/api/adoptions/:uid/:pid	Crear nueva adopción
 
-🐳 Docker
+# 🐳 Docker
 Construir imagen local
 docker build -t adoptme-backend:1.0.0 .
 Ejecutar contenedor
-Copiar código
+
 docker run -d \
   -p 8080:3000 \
   -e MONGO_URL="tu_mongo_url" \
@@ -123,7 +121,7 @@ Disponible en:
 
 Descargar y ejecutar:
 
-Copiar código
+
 # Descargar imagen
 docker pull pinangojulio/adoptme-backend:1.0.0
 
@@ -135,32 +133,51 @@ docker run -d \
   -e DB_NAME="adoptme" \
   --name adoptme-app \
   pinangojulio/adoptme-backend:1.0.0
-🔧 Variables de Entorno
+
+# 🔧 Variables de Entorno
+
 Variable	Descripción	Valor por defecto
+
 PORT	Puerto del servidor	8080
+
 MONGO_URL	URL de conexión MongoDB	mongodb://localhost:27017
+
 DB_NAME	Nombre de la base de datos	adoptme
+
 JWT_SECRET	Clave secreta para JWT	(requerida)
 
-📁 Estructura del Proyecto
-text
-Copiar código
+# 📁 Estructura del Proyecto
+
 src/
 ├── controllers/     # Controladores de rutas
+
 ├── dao/             # Data Access Objects  
+
 ├── docs/            # Documentación Swagger
+
 ├── dto/             # Data Transfer Objects
+
 ├── models/          # Modelos de Mongoose
+
 ├── repository/      # Patrón Repository
+
 ├── routes/          # Definición de rutas
+
 ├── services/        # Servicios de negocio
+
 ├── utils/           # Utilidades
+
 ├── config/          # Configuración
+
 └── app.js           # Archivo principal
 
 test/                # Tests unitarios y funcionales
-🧑‍💻 Scripts Disponibles
-Copiar código
+
+
+# 🧑‍💻 Scripts Disponibles
+
 npm start    # Iniciar en producción
+
 npm run dev  # Iniciar en desarrollo (nodemon)
+
 npm test     # Ejecutar tests
