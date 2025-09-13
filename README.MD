@@ -52,24 +52,24 @@ Git
 Pasos
 Clonar el repositorio
 
- 
+Copiar código
 git clone https://github.com/PinangoJulio/Curso_Backend_3.git
 cd Curso_Backend_3
 Instalar dependencias
 
- 
+Copiar código
 npm install
 Configurar variables de entorno creando el archivo .env en la raíz:
 
 env
- 
+Copiar código
 PORT=8080
 MONGO_URL=mongodb://localhost:27017
 DB_NAME=adoptme
 JWT_SECRET=tu_clave_secreta_jwt
 Iniciar la aplicación
 
- 
+Copiar código
 # Desarrollo
 npm run dev
 
@@ -78,7 +78,7 @@ npm start
 🧪 Testing
 Ejecutar todos los tests:
 
- 
+Copiar código
 npm test
 Incluye:
 
@@ -110,7 +110,7 @@ POST	/api/adoptions/:uid/:pid	Crear nueva adopción
 Construir imagen local
 docker build -t adoptme-backend:1.0.0 .
 Ejecutar contenedor
- 
+Copiar código
 docker run -d \
   -p 8080:3000 \
   -e MONGO_URL="tu_mongo_url" \
@@ -123,7 +123,7 @@ Disponible en:
 
 Descargar y ejecutar:
 
- 
+Copiar código
 # Descargar imagen
 docker pull pinangojulio/adoptme-backend:1.0.0
 
@@ -144,7 +144,7 @@ JWT_SECRET	Clave secreta para JWT	(requerida)
 
 📁 Estructura del Proyecto
 text
- 
+Copiar código
 src/
 ├── controllers/     # Controladores de rutas
 ├── dao/             # Data Access Objects  
@@ -160,7 +160,7 @@ src/
 
 test/                # Tests unitarios y funcionales
 🧑‍💻 Scripts Disponibles
- 
+Copiar código
 npm start    # Iniciar en producción
 npm run dev  # Iniciar en desarrollo (nodemon)
 npm test     # Ejecutar tests
